@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 
 const LogoComponent: React.FC = () => {
   return (
-    <Link to="/" className="flex items-center gap-2">
-      <div className="text-xl font-bold">
-        <span className="text-primary">Screw Crew</span>
-        <span className="text-secondary"> KB</span>
-      </div>
+    <Link to="/" className="flex items-center">
+      <img 
+        src="/lovable-uploads/d2655e72-6265-4811-94f0-4ae457a7fbe1.png" 
+        alt="Screw Crew Logo" 
+        className="h-8"
+      />
     </Link>
   );
 };
