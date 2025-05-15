@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/sidebar";
 import { Link, useLocation } from "react-router-dom";
 import { Search, Library, Star, HelpCircle, Settings } from "lucide-react";
+import LogoComponent from "./Logo";
 
 const navItems = [
   {
@@ -50,22 +51,27 @@ const Layout = ({ children }: PropsWithChildren) => {
         <div className="flex flex-1 overflow-hidden">
           <Sidebar>
             <SidebarContent>
-              <SidebarMenu>
-                {navItems.map((item) => (
-                  <SidebarMenuItem key={item.path}>
-                    <SidebarMenuButton
-                      isActive={location.pathname === item.path}
-                      asChild
-                      tooltip={item.name}
-                    >
-                      <Link to={item.path} className="flex items-center gap-3 text-sm">
-                        {item.icon}
-                        <span>{item.name}</span>
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
-              </SidebarMenu>
+              <div className="flex flex-col">
+                <div className="p-4 border-b border-sidebar-border">
+                  <LogoComponent />
+                </div>
+                <SidebarMenu>
+                  {navItems.map((item) => (
+                    <SidebarMenuItem key={item.path}>
+                      <SidebarMenuButton
+                        isActive={location.pathname === item.path}
+                        asChild
+                        tooltip={item.name}
+                      >
+                        <Link to={item.path} className="flex items-center gap-3 text-sm text-sidebar-foreground">
+                          {item.icon}
+                          <span className="font-medium">{item.name}</span>
+                        </Link>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  ))}
+                </SidebarMenu>
+              </div>
             </SidebarContent>
           </Sidebar>
           <main className="flex-1 overflow-y-auto p-4">{children}</main>

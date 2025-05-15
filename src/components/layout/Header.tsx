@@ -2,7 +2,6 @@
 import { Bell, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import LogoComponent from "./Logo";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 
 const Header = () => {
@@ -10,7 +9,6 @@ const Header = () => {
     <header className="h-14 bg-white border-b px-4 flex items-center justify-between sticky top-0 z-10">
       <div className="flex items-center gap-2">
         <SidebarTrigger />
-        <LogoComponent />
       </div>
       <div className="flex items-center gap-2">
         <Button variant="ghost" size="icon" className="relative">
